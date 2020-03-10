@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+  margin-left: 2em;
+}
+
+li {
+  list-style-type: none;
 }
 
 .App-logo {
@@ -35,4 +39,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.hoverArticle {
+  background-color: #e30713; 
+  color: white;
+  width: 400px;
+  padding: 10px;
+  margin: 5px auto;
+}
+
+.hoverArticle:hover {
+  transition-duration: 0.5s;
+  transform: scale(1.05);
 }
