@@ -3,6 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import * as firebase from "firebase";
+
+
+
+const config = {
+    apiKey: "AIzaSyBeEAk66eKnf-0AfIk3OIlB-Z6GuYHuARc",
+    authDomain: "marketplacee-147dd.firebaseapp.com",
+    databaseURL: "https://marketplacee-147dd.firebaseio.com",
+    storageBucket: "marketplacee-147dd.appspot.com",
+    messagingSenderId: "831773645582"
+};
+
+firebase.initializeApp(config);
+
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

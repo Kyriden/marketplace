@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { withAutorization } from './Autorization';
+import { compose } from 'recompose';
 
 class Signin extends Component {
     state={
@@ -20,7 +21,7 @@ class Signin extends Component {
     render() {
         console.log(this.props);
         return(
-            <div>
+            <div className='signin'>
                 <h1> {this.props.title} </h1>
                 <p> Vous êtes un nouveau client ? Créez un compte dès maintenant !</p>
                 <p> 
@@ -32,10 +33,13 @@ class Signin extends Component {
                     <input type="password" name="password" onChange={this.handleInput}/> 
                 </p> 
                 <p> J'accepte les conditions générales<input type="checkbox" name="interet" value="loc" /> </p> 
-                <input type="submit" value="Envoyer" onClick={this.handleSubmit}/>
+                <input className='bouton' type="submit" value="Valider" onClick={this.handleSubmit}/>
             </div>
         );
     }
 }
 
-export default withRouter(Signin);
+export default compose(
+    withRouter,
+    withAutorization
+)(Signin);

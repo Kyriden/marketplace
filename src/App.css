@@ -1,3 +1,16 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: black;
+}
+
 .App {
   margin-left: 2em;
 }
@@ -11,34 +24,8 @@ li {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.caddie {
+  width: 35%;
 }
 
 .hoverArticle {
@@ -52,4 +39,52 @@ li {
 .hoverArticle:hover {
   transition-duration: 0.5s;
   transform: scale(1.05);
+}
+
+.signin {
+  text-align: center;
+}
+
+.login {
+  text-align: center;
+}
+
+.navigation li {
+  display: inline-block;
+  padding-right: 6em;
+  position: relative;
+  left: 36%;
+}
+
+.navigation a {
+  text-decoration: none;
+}
+
+.header {
+  background-color: #e30713;
+  padding: 1px;
+  margin-left: -2em;
+}
+
+.home {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.panier {
+  position: absolute;
+  left: 95%;
+}
+
+.bouton {
+  padding: 1em 1.5em;
+  border-radius: 5px;
+  background-color: #e30713;
+  color: white; 
+}
+
+.sauce {
+  width: 40%;
+  position: relative;
+  left: 30%;
 }

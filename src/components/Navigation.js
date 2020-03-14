@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import { withAutorization } from './Autorization';
+import caddie from '../img/supermarket.svg';
 
 class Navigation extends Component {
     render() {
         return(
-            <ul>
-                <li> <Link to='/'> Home </Link> </li>
-                <li> <Link to='/signin'> Sign in </Link></li>
-                <li> <Link to='/login'> Login </Link></li>
-            </ul>
+            <div className='header'>
+                <ul className='navigation'>
+                    <li> <Link to='/'> Home </Link> </li>
+                    {this.props.isLogged ? '' : <li> <Link to='/signin'> Sign in </Link></li>}
+                    {this.props.isLogged ? '' : <li> <Link to='/login'> Login </Link></li>}
+                    {this.props.isLogged ? <li> <Link to='/' onClick={this.props.toLogout}> Log out </Link></li> : '' }
+                    <span class='panier'> <Link to='/'>  <img src={caddie} className="caddie" alt="logo" /> {this.props.articles} </Link> </span> 
+                </ul>
+                
+            </div>
         );
     }
 }
 
-export default Navigation;
+export default withAutorization(Navigation);

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import { withAutorization } from './Autorization';
 
 class Login extends Component {
     render() {
         return(
-            <div>
+            <div className='login'>
                 <h1> {this.props.title} </h1>
                 <p>
                     Nous sommes contents de vous revoir ! <br/>
@@ -19,7 +20,7 @@ class Login extends Component {
                         Mot de passe : <br/>
                         <input type="password" name="prenom" value="" /> 
                     </p> 
-                    <input type="submit" value="Valider" />
+                    <input className='bouton' type="submit" value="Valider" />
 
                 </form>
             </div>
@@ -27,4 +28,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withAutorization(Login);
