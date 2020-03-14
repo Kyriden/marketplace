@@ -13,7 +13,7 @@ class Home extends Component {
                     <h1> {this.props.title} </h1>
                     {this.props.isLogged ? <h5> Bienvenue, {this.props.email}</h5> : <p>Vous n'êtes pas connecté.</p>}
                 </div>
-                <Article src={sauce} nom='Sauce du Crous' description='Une magnifique sauce épicée !' prix='0.25ct/pièce'/>
+                <Article src={sauce} nom='Sauce du Crous' description='Une magnifique sauce épicée, parfaite pour relever le goût de vos plus grands plats tels que le homard farci au caviar !' prix='0.10ct/pièce'/>
                 <Article src={rat} nom='Viande de rat' description='Une viande incroyable récoltée directement dans nos locaux ! Traces de mort-aux-rats pouvant être présentes.' prix='2€/kg'/>
                 <Article src={legumes} nom='Légumes à la chaudière' description="La côté convivial et chaleureux de notre chaudière à gaz nous a poussé à cuire nos légumes à l'intérieur. Bon appétit !" prix='4€/kg'/>
             </div>
