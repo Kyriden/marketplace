@@ -1,7 +1,23 @@
 import React, { Component } from 'react';
 import { withAutorization } from './Autorization';
+import { withRouter } from 'react-router-dom';
+import { compose } from 'recompose';
 
 class Login extends Component {
+    state={
+        email: '',
+        password: ''
+    }
+
+    handleInput=(e) => {
+        this.setState({[e.target.name]: e.target.value});
+    }
+
+    handleSubmit=() => {
+        this.props.toLogin(this.state.email);
+        this.props.history.push('/');
+    }
+
     render() {
         return(
             <div className='login'>
@@ -14,13 +30,13 @@ class Login extends Component {
 
                     <p> 
                         Email : <br/>
-                        <input type="text" name="prenom" value="" /> 
+                        <input type="text" name="email" onChange={this.handleInput} /> 
                     </p> 
                     <p> 
                         Mot de passe : <br/>
-                        <input type="password" name="prenom" value="" /> 
+                        <input type="password" name="password" onChange={this.handleInput}/>
                     </p> 
-                    <input className='bouton' type="submit" value="Valider" />
+                    <input className='bouton' type="submit" value="Valider" onClick={this.handleSubmit}/>
 
                 </form>
             </div>
@@ -28,4 +44,7 @@ class Login extends Component {
     }
 }
 
-export default withAutorization(Login);
+export default compose(
+    withRouter,
+    withAutorization
+)(Login);
